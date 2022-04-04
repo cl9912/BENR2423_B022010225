@@ -28,18 +28,24 @@ db.companies.find({"$or":[{"$and":[{"founded_year":2004},{"$or":[{"category_code
 
 Lab: $expr:
 db.companies.find({"$expr":{"$eq":["$permalink","$twitter_username"]}}).count()
+1299
 
 Lab 1: Array Operators:
 db.listingsAndReviews.find({"$and":[{"accommodates":{"$gt":6}},{"reviews":{"$size":50}}]}).pretty()
+Sunset Beach Lodge Retreat
 
 Lab 2: Array Operators:
 db.listingsAndReviews.find({"$and":[{"property_type":"House"},{"amenities":"Changing table"}]}).count()
+11
 
 Lab: Array Operators and Projection
 db.companies.find({"offices":{"$elemMatch":{"city":"Seattle"}}}).count()
+117
 
 Lab 1: Querying Arrays and Sub-Documents:
 db.trips.find({"start station location.coordinates.0":{"$lte":-74}}).count()
+1928
 
 Lab 2: Querying Arrays and Sub-Documents
 db.inspections.find({"address.city":"NEW YORK"}).count()
+18279
